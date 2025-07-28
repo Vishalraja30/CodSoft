@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="index.css"> <!-- Reuse your existing styles -->
+  <style>
+    .signup-form {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .signup-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .signup-form button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signup-form h2 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><h1>QUIZZER</h1></div>
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Take Quiz</a>
+    <div class="signup">
+      <a class="active">Sign Up</a>
+    </div>
+  </div>
+<div class="body">
+  <div class="signup-form" class="body">
+    <h2>Create an Account</h2>
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+    <button onclick="signUp()">Sign Up</button>
+  </div>
+  
+</div>
+  <script>
+    function signUp() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if (!name || !email || !password || !confirmPassword) {
+        alert("Please fill all fields.");
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      // Simulated save (not secure for real apps)
+      const user = { name, email, password };
+      localStorage.setItem('quizUser', JSON.stringify(user));
+      alert("Sign up successful! Redirecting to home...");
+      window.location.href = "index.html";
+    }
+  </script>
+ </div>
+			<p > </p>
+			<br>
+			<br>
+		</div>
+    
+	</div>
+	<footer>
+  <ul class="footer-links">
+    <li><a href="#">Copyright</a></li>
+    <li><a href="#">Terms and Conditions</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Feedback</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Result</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><h1>QUIZZER</h1></div>
+    <a href="index.html">Home</a>
+    <a class="active">Result</a>
+    <div class="signup"><a href="sign up.html">Sign Up</a></div>
+  </div>
+
+  <div class="body">
+    <h1>Your Score</h1>
+    <div id="result"></div>
+  </div>
+  
+  <script>
+    const score = localStorage.getItem('quizScore');
+    const total = localStorage.getItem('quizTotal');
+    document.getElementById('result').innerHTML = `
+      <h2>You scored ${score} out of ${total}</h2>
+    `;
+  </script>
+  </div>
+			<p > </p>
+			<br>
+			<br>
+		</div>
+    
+	</div>
+	<footer>
+  <ul class="footer-links">
+    <li><a href="#">Copyright</a></li>
+    <li><a href="#">Terms and Conditions</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Feedback</a></li>
+  </ul>
+</footer>
+</div>
+</body>
+</html>
